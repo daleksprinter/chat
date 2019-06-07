@@ -14,6 +14,16 @@
     <p class = 'alert'><%= alert %></p>
 
     <%= yield %>
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.name %></strong>.
+      <%= link_to "Settings", edit_user_registration_path %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+      <% @rooms.each do |room| %>
+          <p><%= room.room_name %> <%= room.room_id %></p>
+      <% end %>
+    <% end %>
+
 
   </body>
 </html>
