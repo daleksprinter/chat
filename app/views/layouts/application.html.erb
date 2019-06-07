@@ -20,7 +20,7 @@
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
       <% @rooms.each do |room| %>
-          <% if room.room_id == @room_id %>
+          <% if room.room_id == @room.room_id %>
             <h2><%= room.room_name %> <%= room.room_id %></h2>
           <% else %>
             <p><%= room.room_name %> <%= room.room_id %></p>
