@@ -1,1 +1,4 @@
 <p>room <%= @room_id %></p>
+<% @messages.each do |message| %>
+    <p><%= message.text %></p>
+<% end %>
