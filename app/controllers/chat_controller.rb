@@ -7,6 +7,9 @@ class ChatController < ApplicationController
   def show
     @room_id = params[:id]
     room = Room.find_by(room_id: @room_id)
-    @messages = Message.where(room_id: room[:id])
+    sql = 'select * 
+            from users join messages on messages.user_id = users.id 
+            where messages.room_id = ?'
+    @messages = User.find_by_sql([sql, room.id])
   end
 end
