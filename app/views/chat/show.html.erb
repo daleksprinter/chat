@@ -1,0 +1,12 @@
+<p> now you are in room <%= @room.room_name %> </p>
+
+<%= form_with  do |form| %>
+    <input type = 'text' name = 'text'>
+    <input type = 'submit'>
+<% end %>
+
+<ul>
+<% @messages.each do |message| %>
+    <li><%= message.text %> <%= message.name %></li>
+<% end %>
+</ul>
