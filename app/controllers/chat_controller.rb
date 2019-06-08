@@ -21,11 +21,15 @@ class ChatController < ApplicationController
     Message.create(text:params[:text], user_id:current_user.id, room_id:room.id)
   end
 
-  def new
-    data = { msg: 'msg recieved.' }
-    send_message :spread_message, data
+  def addRoom
+    @room = Room.new()
   end
 
+  def createRoom
+  end
+
+  def joinRoom
+  end
 
 
 end

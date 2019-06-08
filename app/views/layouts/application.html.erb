@@ -23,13 +23,14 @@
       <a href = <%= '/' %>>HOME</a>
       <% @rooms.each do |room| %>
           <% if room.room_id == @room.room_id %>
-            <h2><a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a></h2>
+            <h2><%= room.room_name %></h2>
           <% else %>
             <p><a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a></p>
           <% end %>
       <% end %>
     <% end %>
 
+    <a href = '/add'>Add New Room</a>
 
   </body>
 </html>
