@@ -1,10 +1,12 @@
 class ChatController < ApplicationController
   before_action :authenticate_user!
   def index
+    @room = Room.new()
   end
   
   before_action :authenticate_user!
   def show
+    @current_user = current_user
     room_id = params[:id]
     @room = Room.find_by(room_id: room_id)
     sql = 'select * 

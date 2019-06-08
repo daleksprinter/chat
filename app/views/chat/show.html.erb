@@ -1,9 +1,15 @@
-<p> now you are in room <%= @room.room_name %> </p>
+<div>
+    <div>you are in room</div>
+    <div id = 'room_id'><%= @room.room_id %></div>
+    <div>your id</div>
+    <div id = 'user_id'><%= @current_user.user_id %></div>
+</div>
 
-<%= form_with  do |form| %>
-    <input type = 'text' name = 'text'>
-    <input type = 'submit'>
-<% end %>
+<input type = 'text' id = 'text'>
+<input type = button onclick = "App.room.speak(txt = document.getElementById('text').value,
+        room = document.getElementById('room_id').textContent,
+      user = document.getElementById('user_id').textContent
+      )" value = 'send'>
 
 <ul>
 <% @messages.each do |message| %>
