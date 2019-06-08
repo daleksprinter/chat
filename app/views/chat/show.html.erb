@@ -5,14 +5,19 @@
     <div id = 'user_id'><%= @current_user.user_id %></div>
 </div>
 
-<input type = 'text' id = 'text'>
-<input type = button onclick = "App.room.speak(txt = document.getElementById('text').value,
-        room = document.getElementById('room_id').textContent,
-      user = document.getElementById('user_id').textContent
-      )" value = 'send'>
+<div>
+    <ul id = 'messages'>
+        <% @messages.each do |message| %>
+            <li><%= message.text %> <%= message.name %></li>
+        <% end %>
+    </ul>
+</div>
 
-<ul>
-<% @messages.each do |message| %>
-    <li><%= message.text %> <%= message.name %></li>
-<% end %>
-</ul>
+<div>
+    <input type = 'text' id = 'text'>
+    <input type = button 
+            onclick = "App.room.speak(txt = document.getElementById('text').value,
+                                room = document.getElementById('room_id').textContent,
+                                user = document.getElementById('user_id').textContent)" 
+            value = 'send'>
+</div>
