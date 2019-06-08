@@ -26,10 +26,18 @@ class ChatController < ApplicationController
   end
 
   def createRoom
-    newRoom = Room.create(room_id:params[:roomid], room_name:params[:roomname], password:params[:password])
-    newRoom.save
-    Join.create(user_id:current_user.id, room_id:newRoom.id)
-    redirect_to :controller => 'chat', :action => 'show', :id => params[:roomid]
+    if Room.exists?(:room_id => params[:roomid])
+      if params[:password] == params[:confirmpassword]
+        newRoom = Room.create(room_id:params[:roomid], room_name:params[:roomname], password:params[:password])
+        newRoom.save
+        Join.create(user_id:current_user.id, room_id:newRoom.id)
+        redirect_to :controller => 'chat', :action => 'show', :id => params[:roomid]
+      else 
+        p 'password is not same'
+      end
+    else
+      p 'room exists'
+    end
 
   end
 

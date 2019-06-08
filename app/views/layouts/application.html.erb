@@ -14,7 +14,6 @@
     <p class = 'notice'><%= notice %></p>
     <p class = 'alert'><%= alert %></p>
 
-    <%= yield %>
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.name %></strong>.
       <%= link_to "Settings", edit_user_registration_path %> |
@@ -32,5 +31,6 @@
 
     <a href = '/add'>Add New Room</a>
 
+    <%= yield %>
   </body>
 </html>
