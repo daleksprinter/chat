@@ -7,19 +7,30 @@
 
 <div class = 'chat'>
     <div>
-        <ul id = 'messages'>
+        <div id = 'messages'>
             <% @messages.each do |message| %>
-                <li><%= message.text %> <%= message.name %></li>
+                <% if message.user_id.to_i == @current_user.id %>
+                    <div class = 'message'>
+                        <div style = 'font-size:14px'><%= message.name %></div>
+                        <div><%= message.text %></div>
+                    </div>
+                <% else %>
+                    <div class = 'message-other'>
+                        <div style = 'font-size:14px'><%= message.name %></div>
+                        <div><%= message.text %></div>
+                    </div>
+                <% end %>
             <% end %>
-        </ul>
+        </div>
     </div>
 
-    <div>
-        <input type = 'text' id = 'text'>
+    <div class = 'input'>
+        <input type = 'text' id = 'text' class = 'input-message' placeholder = 'message'>
         <input type = button 
                 onclick = "App.room.speak(txt = document.getElementById('text').value,
-                                    room = document.getElementById('room_id').textContent,
-                                    user = document.getElementById('user_id').textContent)" 
-                value = 'send'>
+                                            room = document.getElementById('room_id').textContent,
+                                            user = document.getElementById('user_id').textContent)" 
+                value = 'send'
+                class = 'send-button'>
     </div>
 </div>

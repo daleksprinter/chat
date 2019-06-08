@@ -15,24 +15,31 @@
     <p class = 'alert'><%= alert %></p>
 
     <% if user_signed_in? %>
-      <a href = <%= '/' %>>Home</a> | 
-      <%= link_to "Settings", edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
-      Logged in as <strong><%= current_user.name %></strong>.
+      <div class = 'nav-bar'>
+        <a href = <%= '/' %>>Home</a> | 
+        <%= link_to "Settings", edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        Logged in as <strong><%= current_user.name %></strong>.
+      </div>
       
       <div class = 'roomMenu'>
         <% @rooms.each do |room| %>
             <% if room.room_id == @room.room_id %>
-              <h2><%= room.room_name %></h2>
+              <div class = 'selected-room'>
+                <%= room.room_name %>
+              </div>
             <% else %>
-              <p><a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a></p>
+              <div class = 'non-selected-room'>
+                <a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a>
+              </div>
             <% end %>
         <% end %>
+        <a href = '/add' class = 'addRoomButton'>Add New Room</a>
       </div>
     <% end %>
 
-    <a href = '/add'>Add New Room</a>
+    
 
     <%= yield %>
   </body>

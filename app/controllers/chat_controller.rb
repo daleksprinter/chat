@@ -13,6 +13,7 @@ class ChatController < ApplicationController
             from users join messages on messages.user_id = users.id 
             where messages.room_id = ?'
     @messages = User.find_by_sql([sql, @room.id])
+    p @messages
   end
 
   before_action :authenticate_user!

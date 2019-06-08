@@ -1,15 +1,72 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body{
+    background-color: rgb(41, 41, 41);
+}
+
+.nav-bar{
+    background-color: rgb(153, 153, 153);
+}
+
+.chat{
+    float:right;
+    margin:2%;
+    width:75%;
+}
+
+.message{
+    width:40%;
+    font-size: 20px;
+    margin:10px;
+    background-color: rgb(221, 221, 221);
+    padding:10px;
+    border-radius: 8px;
+    color:rgb(71, 71, 71);
+    text-align: right;
+    margin-left: auto;
+}
+.message-other{
+    width:40%;
+    font-size: 20px;
+    margin:10px;
+    background-color: rgb(221, 221, 221);
+    padding:10px;
+    border-radius: 8px;
+    color:rgb(71, 71, 71);
+    text-align: left;
+}
+
+.roomMenu{
+    position: fixed;
+    width:20%;
+    height:100%;
+    background-color: rgb(63, 63, 63);
+}
+
+.selected-room{
+    margin:10px;
+    background-color: rgb(139, 139, 139);
+    text-align: center;
+    color:rgb(221, 221, 221);
+}
+.non-selected-room{
+    margin:10px;
+    background-color: rgb(97, 97, 97);
+    text-align: center;
+    color:rgb(221, 221, 221);
+}
+.addRoomButton{
+    float:right;
+    margin-right:10px;
+}
+
+.input-message{
+    border:0;
+    padding:10px;
+    font-size:1.3em;
+    font-family:Arial, sans-serif;
+    color:rgb(70, 70, 70);
+    border:solid 1px #ccc;
+    margin:20px 0 20px;
+    width:87%;
+    background-color: rgb(211, 211, 211);
+    border-radius: 10px;
+}
