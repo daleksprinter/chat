@@ -26,6 +26,11 @@ class ChatController < ApplicationController
   end
 
   def createRoom
+    newRoom = Room.create(room_id:params[:roomid], room_name:params[:roomname], password:params[:password])
+    newRoom.save
+    Join.create(user_id:current_user.id, room_id:newRoom.id)
+    redirect_to :controller => 'chat', :action => 'show', :id => params[:roomid]
+
   end
 
   def joinRoom
