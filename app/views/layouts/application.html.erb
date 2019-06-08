@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,11 +20,12 @@
       <%= link_to "Settings", edit_user_registration_path %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
+      <a href = <%= '/' %>>HOME</a>
       <% @rooms.each do |room| %>
           <% if room.room_id == @room.room_id %>
-            <h2><%= room.room_name %> <%= room.room_id %></h2>
+            <h2><a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a></h2>
           <% else %>
-            <p><%= room.room_name %> <%= room.room_id %></p>
+            <p><a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a></p>
           <% end %>
       <% end %>
     <% end %>
