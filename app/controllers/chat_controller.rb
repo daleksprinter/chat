@@ -21,6 +21,7 @@ class ChatController < ApplicationController
     Message.create(text:params[:text], user_id:current_user.id, room_id:room.id)
   end
 
+  before_action :authenticate_user!
   def addRoom
     @room = Room.new()
   end
