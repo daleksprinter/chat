@@ -34,6 +34,17 @@ class ChatController < ApplicationController
   end
 
   def joinRoom
+    if Room.exists?(:room_id => params[:roomid])
+      room = Room.find_by(room_id: params[:roomid])
+      if room.password == params[:password] 
+        Join.create(room_id: room.id, user_id: current_user.id)
+        redirect_to :controller => 'chat', :action => 'show', :id => room.room_id
+      else 
+        p 'password incorrect'
+      end
+    else
+      p 'not exist'
+    end
   end
 
 
