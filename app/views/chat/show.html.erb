@@ -1,3 +1,27 @@
+<div class = 'roomMenu'>
+        <div class = 'menu'>
+          <a href = <%= '/' %>>Home</a> | 
+          <%= link_to "Settings", edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <div>Logged in as <strong><%= current_user.name %></strong>.</div>
+        </div>
+        
+        <% @rooms.each do |room| %>
+            <% if room.room_id == @room.room_id %>
+              <div class = 'selected-room'>
+                <%= room.room_name %>
+              </div>
+            <% else %>
+              <a href = <%= '/room/' + room.room_id %>>
+                <div class = 'non-selected-room'>
+                  <%= room.room_name %>
+                </div>
+              </a>
+            <% end %>
+        <% end %>
+        <a href = '/add' class = 'addRoomButton'>Add New Room</a>
+      </div>
+
 <div style = 'display:none'>
     <div>you are in room</div>
     <div id = 'room_id'><%= @room.room_id %></div>
@@ -28,10 +52,12 @@
 
 <div class = 'input'>
     <input type = 'text' id = 'text' class = 'input-message' placeholder = 'message'>
-    <input type = button 
+    <input type = 'button' 
             onclick = "App.room.speak(txt = document.getElementById('text').value,
                                         room = document.getElementById('room_id').textContent,
                                         user = document.getElementById('user_id').textContent)" 
-            value = 'send'
-            class = 'send-button'>
+            value = 'Send'
+            class = "btn btn-primary">
+
 </div>
+

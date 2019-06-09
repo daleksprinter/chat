@@ -1,0 +1,17 @@
+<div class = 'roomMenu'>
+        <div class = 'menu'>
+          <a href = <%= '/' %>>Home</a> | 
+          <%= link_to "Settings", edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <div>Logged in as <strong><%= current_user.name %></strong>.</div>
+        </div>
+        
+        <% @rooms.each do |room| %>
+              <a href = <%= '/room/' + room.room_id %>>
+                <div class = 'non-selected-room'>
+                  <%= room.room_name %>
+                </div>
+              </a>
+        <% end %>
+        <a href = '/add' class = 'addRoomButton'>Add New Room</a>
+      </div>
