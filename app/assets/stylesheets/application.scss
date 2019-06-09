@@ -26,6 +26,10 @@ a {
     text-decoration: none;
     color:black;
 }
+a:hover{
+    text-decoration: none;
+    color:rgb(43, 47, 114);
+}
 
 .message{
 
@@ -62,15 +66,18 @@ a {
 .menu{
     background-color: rgb(221, 221, 221);
     padding:5px;
+    margin-bottom: 10px;
 }
 
 .selected-room{
+    font-weight: bold;
     height:5%;
     background-color: rgb(139, 139, 139);
     text-align: center;
     color:rgb(221, 221, 221);
 }
 .non-selected-room{
+    font-weight: bold;
     height:5%;
     background-color: rgb(97, 97, 97);
     text-align: center;
@@ -83,34 +90,32 @@ a {
     color:rgb(221, 221, 221);
 }
 .addRoomButton{
+    color:rgb(224, 224, 224);
     float:right;
     margin-right:10px;
 }
 
 .addroom{
-    margin:auto;
-    width:80%;
+    text-align: center;
 }
 
 .joinroom{
     background-color: rgb(230, 230, 230);
-    width:40%;
     text-align:center;
     border-radius: 10px;
     padding:20px;
-    margin:10px;
-    float:left;
+    margin:10px auto;
+    width:30%;
 }
 
 .createroom{
 
     background-color: rgb(230, 230, 230);
-    width:40%;
     text-align:center;
     border-radius: 10px;
     padding:20px;
-    margin:10px;
-    float:left;
+    margin:10px auto;
+    width:30%;
 }
 
 .input{
