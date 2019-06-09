@@ -1,34 +1,36 @@
-<p>join room</p>
-<%= form_with url: '/join' do |form| %>
-    <div>
-        <p>RoomID</p>
-        <%= form.text_field :roomid %>
-    </div>
-    <div>
-        <p>Password</p>
-        <%= form.text_field :password %>
-    </div>
-    <%= form.submit %>
-<% end %>
 
+<div class = 'addroom'>
+    <div class = 'createroom'>
+        <p>新規ルーム作成</p>
+        <%= form_with url: '/create' do |form| %>
+            <p>
+                <input type="text" class="form-control" placeholder="RoomID" name='roomid'>
+            </p>
+            <p>
+                <input type="text" class="form-control" placeholder="RoomName" name='roomname'>
+            </p>
+            <p>
+                <input type="text" class="form-control" placeholder="Password" name='password'>
+            </p>
+            <p> 
+                <input type="text" class="form-control" placeholder="Confirm Password" name='confirmpassword'>
+            </p>
+            <button type="submit" class="btn btn-primary">Create Room</button>
+        <% end %>
+    </div>
 
-<p>create room</p>
-<%= form_with url: '/create' do |form| %>
-    <div>
-        <p>RoomID</p>
-        <%= form.text_field :roomid %>
+    <div class = 'joinroom'>
+        <p>既存ルーム入室</p>
+        <%= form_with url: '/join' do |form| %>
+            <p> 
+                <input type="text" class="form-control" placeholder="Room ID" name='roomid'>
+            </p>
+            <p> 
+                <input type="text" class="form-control" placeholder="Password" name='password'>
+            </p>
+            <button type="submit" class="btn btn-primary">Enter Room</button>
+        <% end %>
     </div>
-    <div>
-        <p>RoomName</p>
-        <%= form.text_field :roomname %>
-    </div>
-    <div>
-        <p>Password</p>
-        <%= form.text_field :password %>
-    </div>
-    <div>
-        <p>Confirm Password</p>
-        <%= form.text_field :confirmpassword %>
-    </div>
-    <%= form.submit %>
-<% end %>
+    <a href="/" class="btn btn-secondary" role="button" style = "width:30%;"><-Back</a>
+</div>
+

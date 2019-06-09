@@ -1,11 +1,20 @@
 class ChatController < ApplicationController
   before_action :authenticate_user!
   def index
-    @room = Room.new()
+    user = User.find_by(name: current_user.name)
+    sql = 'select * 
+        from joins left outer join rooms on joins.room_id = rooms.id 
+        where joins.user_id = ?'
+    @rooms = Room.find_by_sql([sql, user.id])
   end
   
   before_action :authenticate_user!
   def show
+    user = User.find_by(name: current_user.name)
+    sql = 'select * 
+        from joins left outer join rooms on joins.room_id = rooms.id 
+        where joins.user_id = ?'
+    @rooms = Room.find_by_sql([sql, user.id])
     @current_user = current_user
     room_id = params[:id]
     @room = Room.find_by(room_id: room_id)
@@ -13,6 +22,7 @@ class ChatController < ApplicationController
             from users join messages on messages.user_id = users.id 
             where messages.room_id = ?'
     @messages = User.find_by_sql([sql, @room.id])
+    p @messages
   end
 
   before_action :authenticate_user!
@@ -23,11 +33,11 @@ class ChatController < ApplicationController
 
   before_action :authenticate_user!
   def addRoom
-    @room = Room.new()
   end
 
   def createRoom
-    if Room.exists?(:room_id => params[:roomid])
+    p params
+    if !Room.exists?(:room_id => params[:roomid])
       if params[:password] == params[:confirmpassword]
         newRoom = Room.create(room_id:params[:roomid], room_name:params[:roomname], password:params[:password])
         newRoom.save

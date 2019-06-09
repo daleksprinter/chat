@@ -1,0 +1,166 @@
+@import "bootstrap"; 
+
+.login{
+    background-color:white;
+    width:30%;
+    margin:auto;
+    text-align: center;
+    border-radius: 10px;
+    padding:20px;
+}
+
+body{
+    background-color: rgb(41, 41, 41);
+}
+
+.nav-bar{
+    top:0;
+    position: fixed;
+    width:78%;
+    float:right;
+    right:0;
+    background-color: rgb(153, 153, 153);
+}
+
+.chat{
+    float:right;
+    margin-bottom: 8%;
+    margin-right:2%;
+    width:75%;
+
+}
+
+
+a {
+    text-decoration: none;
+    color:black;
+}
+a:hover{
+    text-decoration: none;
+    color:rgb(43, 47, 114);
+}
+
+.message{
+
+    width:40%;
+    font-size: 20px;
+    margin:10px;
+    background-color: rgb(221, 221, 221);
+    padding:10px;
+    border-radius: 8px;
+    color:rgb(71, 71, 71);
+    text-align: right;
+    margin-left: auto;
+}
+.message-other{
+    width:40%;
+    font-size: 20px;
+    margin:10px;
+    background-color: rgb(221, 221, 221);
+    padding:10px;
+    border-radius: 8px;
+    color:rgb(71, 71, 71);
+    text-align: left;
+}
+
+.roomMenu{
+    top:0;
+    left:0;
+    position: fixed;
+    width:20%;
+    height:100%;
+    background-color: rgb(98, 98, 98);
+}
+
+.menu{
+    background-color: rgb(221, 221, 221);
+    padding:5px;
+    margin-bottom: 10px;
+}
+
+.selected-room{
+    font-weight: bold;
+    height:5%;
+    background-color: rgb(139, 139, 139);
+    text-align: center;
+    color:rgb(221, 221, 221);
+}
+.non-selected-room{
+    font-weight: bold;
+    height:5%;
+    background-color: rgb(97, 97, 97);
+    text-align: center;
+    color:rgb(221, 221, 221);
+}
+.non-selected-room:hover{
+    height:5%;
+    background-color: rgb(109, 109, 109);
+    text-align: center;
+    color:rgb(221, 221, 221);
+}
+.addRoomButton{
+    color:rgb(224, 224, 224);
+    float:right;
+    margin-right:10px;
+}
+
+.addroom{
+    text-align: center;
+}
+
+.joinroom{
+    background-color: rgb(230, 230, 230);
+    text-align:center;
+    border-radius: 10px;
+    padding:20px;
+    margin:10px auto;
+    width:30%;
+}
+
+.createroom{
+
+    background-color: rgb(230, 230, 230);
+    text-align:center;
+    border-radius: 10px;
+    padding:20px;
+    margin:10px auto;
+    width:30%;
+}
+
+.input{
+    border-radius: 10px 10px 0px 0px;
+    position: fixed;
+    width:78%;
+    float:right;
+    right:1%;
+    bottom: 0;
+    background-color: black;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.input-message{
+    border:0;
+    padding:10px;
+    font-size:1.3em;
+    font-family:Arial, sans-serif;
+    color:rgb(70, 70, 70);
+    border:solid 1px #ccc;
+    margin:20px 0 20px;
+    width:87%;
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+}
+
+
+.send-button {
+    width:7%;
+    height:40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+  }

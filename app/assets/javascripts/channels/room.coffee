@@ -6,9 +6,15 @@ document.addEventListener 'turbolinks:load', ->
     disconnected: ->
 
     received: (data) ->
-      document.getElementById('text').value = "";
-      message = '<li>' + data['message']['message'] + ' ' + data['message']['user'] + '</li>'
-      document.getElementById('messages').innerHTML += message
+      if document.getElementById('user_id').textContent == data['message']['user']
+        document.getElementById('text').value = ""
+        dom = "<div class = 'message'>"+"<div style = 'font-size:14px'>" + data['message']['user'] + "</div>"+"<div>" + data['message']['message'] + "</div>"+"</div>"
+        document.getElementById('messages').innerHTML += dom
+      else 
+        dom = "<div class = 'message-other'>"+"<div style = 'font-size:14px'>" + data['message']['user'] + "</div>"+"<div>" + data['message']['message'] + "</div>"+"</div>"
+        document.getElementById('messages').innerHTML += dom
+
 
     speak: (message, room, user)->
-      @perform 'speak', message: message, room: room, user: user
+      if !(message == '')
+        @perform 'speak', message: message, room: room, user: user

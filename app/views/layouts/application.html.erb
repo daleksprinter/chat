@@ -12,27 +12,7 @@
 
   <body>
     <p class = 'notice'><%= notice %></p>
-    <p class = 'alert'><%= alert %></p>
-
-    <% if user_signed_in? %>
-      <a href = <%= '/' %>>Home</a> | 
-      <%= link_to "Settings", edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-
-      Logged in as <strong><%= current_user.name %></strong>.
-      
-      <div class = 'roomMenu'>
-        <% @rooms.each do |room| %>
-            <% if room.room_id == @room.room_id %>
-              <h2><%= room.room_name %></h2>
-            <% else %>
-              <p><a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a></p>
-            <% end %>
-        <% end %>
-      </div>
-    <% end %>
-
-    <a href = '/add'>Add New Room</a>
+    <p class = 'alert'><%= alert %></p>    
 
     <%= yield %>
   </body>
