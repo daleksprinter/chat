@@ -16,4 +16,5 @@ document.addEventListener 'turbolinks:load', ->
 
 
     speak: (message, room, user)->
-      @perform 'speak', message: message, room: room, user: user
+      if !(message == '')
+        @perform 'speak', message: message, room: room, user: user

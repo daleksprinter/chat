@@ -1,5 +1,14 @@
 @import "bootstrap"; 
 
+.login{
+    background-color:white;
+    width:30%;
+    margin:auto;
+    text-align: center;
+    border-radius: 10px;
+    padding:20px;
+}
+
 body{
     background-color: rgb(41, 41, 41);
 }
@@ -119,6 +128,7 @@ a:hover{
 }
 
 .input{
+    border-radius: 10px 10px 0px 0px;
     position: fixed;
     width:78%;
     float:right;
@@ -138,9 +148,10 @@ a:hover{
     border:solid 1px #ccc;
     margin:20px 0 20px;
     width:87%;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(230, 230, 230);
     border-radius: 10px;
 }
+
 
 .send-button {
     width:7%;
