@@ -23,6 +23,11 @@ body{
 .messages{
 }
 
+a {
+    text-decoration: none;
+    color:black;
+}
+
 .message{
 
     width:40%;
@@ -69,6 +74,12 @@ body{
 .non-selected-room{
     height:5%;
     background-color: rgb(97, 97, 97);
+    text-align: center;
+    color:rgb(221, 221, 221);
+}
+.non-selected-room:hover{
+    height:5%;
+    background-color: rgb(109, 109, 109);
     text-align: center;
     color:rgb(221, 221, 221);
 }

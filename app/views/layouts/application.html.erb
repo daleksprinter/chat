@@ -31,9 +31,11 @@
                 <%= room.room_name %>
               </div>
             <% else %>
-              <div class = 'non-selected-room'>
-                <a href = <%= '/room/' + room.room_id %>><%= room.room_name %></a>
-              </div>
+              <a href = <%= '/room/' + room.room_id %>>
+                <div class = 'non-selected-room'>
+                  <%= room.room_name %>
+                </div>
+              </a>
             <% end %>
         <% end %>
         <a href = '/add' class = 'addRoomButton'>Add New Room</a>
