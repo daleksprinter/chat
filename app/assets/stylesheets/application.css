@@ -3,16 +3,28 @@ body{
 }
 
 .nav-bar{
+    top:0;
+    position: fixed;
+    width:78%;
+    float:right;
+    right:0;
     background-color: rgb(153, 153, 153);
 }
 
 .chat{
     float:right;
-    margin:2%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+    margin-right:2%;
     width:75%;
+
+}
+
+.messages{
 }
 
 .message{
+
     width:40%;
     font-size: 20px;
     margin:10px;
@@ -35,20 +47,27 @@ body{
 }
 
 .roomMenu{
+    top:0;
+    left:0;
     position: fixed;
     width:20%;
     height:100%;
     background-color: rgb(63, 63, 63);
 }
 
+.menu{
+    background-color: white;
+    padding:5px;
+}
+
 .selected-room{
-    margin:10px;
+    height:5%;
     background-color: rgb(139, 139, 139);
     text-align: center;
     color:rgb(221, 221, 221);
 }
 .non-selected-room{
-    margin:10px;
+    height:5%;
     background-color: rgb(97, 97, 97);
     text-align: center;
     color:rgb(221, 221, 221);
@@ -56,6 +75,17 @@ body{
 .addRoomButton{
     float:right;
     margin-right:10px;
+}
+
+.input{
+    position: fixed;
+    width:78%;
+    float:right;
+    right:1%;
+    bottom: 0;
+    background-color: black;
+    text-align: center;
+    opacity: 0.8;
 }
 
 .input-message{
@@ -70,3 +100,15 @@ body{
     background-color: rgb(211, 211, 211);
     border-radius: 10px;
 }
+
+.send-button {
+    width:7%;
+    height:40px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+  }

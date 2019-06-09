@@ -15,15 +15,16 @@
     <p class = 'alert'><%= alert %></p>
 
     <% if user_signed_in? %>
-
-      <div class = 'nav-bar'>
-        <a href = <%= '/' %>>Home</a> | 
-        <%= link_to "Settings", edit_user_registration_path %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        Logged in as <strong><%= current_user.name %></strong>.
-      </div>
       
       <div class = 'roomMenu'>
+
+        <div class = 'menu'>
+          <a href = <%= '/' %>>Home</a> | 
+          <%= link_to "Settings", edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <div>Logged in as <strong><%= current_user.name %></strong>.</div>
+        </div>
+        
         <% @rooms.each do |room| %>
             <% if room.room_id == @room.room_id %>
               <div class = 'selected-room'>

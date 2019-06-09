@@ -1,34 +1,37 @@
-<p>join room</p>
-<%= form_with url: '/join' do |form| %>
-    <div>
-        <p>RoomID</p>
-        <%= form.text_field :roomid %>
-    </div>
-    <div>
-        <p>Password</p>
-        <%= form.text_field :password %>
-    </div>
-    <%= form.submit %>
-<% end %>
+<div>
+    <p>join room</p>
+    <%= form_with url: '/join' do |form| %>
+        <div>
+            <p>RoomID</p>
+            <%= form.text_field :roomid %>
+        </div>
+        <div>
+            <p>Password</p>
+            <%= form.text_field :password %>
+        </div>
+        <%= form.submit %>
+    <% end %>
+</div>
 
-
-<p>create room</p>
-<%= form_with url: '/create' do |form| %>
-    <div>
-        <p>RoomID</p>
-        <%= form.text_field :roomid %>
-    </div>
-    <div>
-        <p>RoomName</p>
-        <%= form.text_field :roomname %>
-    </div>
-    <div>
-        <p>Password</p>
-        <%= form.text_field :password %>
-    </div>
-    <div>
-        <p>Confirm Password</p>
-        <%= form.text_field :confirmpassword %>
-    </div>
-    <%= form.submit %>
-<% end %>
+<div>
+    <p>create room</p>
+    <%= form_with url: '/create' do |form| %>
+        <div>
+            <p>RoomID</p>
+            <%= form.text_field :roomid %>
+        </div>
+        <div>
+            <p>RoomName</p>
+            <%= form.text_field :roomname %>
+        </div>
+        <div>
+            <p>Password</p>
+            <%= form.text_field :password %>
+        </div>
+        <div>
+            <p>Confirm Password</p>
+            <%= form.text_field :confirmpassword %>
+        </div>
+        <%= form.submit %>
+    <% end %>
+</div>

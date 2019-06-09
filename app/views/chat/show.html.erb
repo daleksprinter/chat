@@ -6,8 +6,8 @@
 </div>
 
 <div class = 'chat'>
-    <div>
-        <div id = 'messages'>
+
+        <div id = 'messages' class = 'messages'>
             <% @messages.each do |message| %>
                 <% if message.user_id.to_i == @current_user.id %>
                     <div class = 'message'>
@@ -22,15 +22,16 @@
                 <% end %>
             <% end %>
         </div>
-    </div>
 
-    <div class = 'input'>
-        <input type = 'text' id = 'text' class = 'input-message' placeholder = 'message'>
-        <input type = button 
-                onclick = "App.room.speak(txt = document.getElementById('text').value,
-                                            room = document.getElementById('room_id').textContent,
-                                            user = document.getElementById('user_id').textContent)" 
-                value = 'send'
-                class = 'send-button'>
-    </div>
+
+</div>
+
+<div class = 'input'>
+    <input type = 'text' id = 'text' class = 'input-message' placeholder = 'message'>
+    <input type = button 
+            onclick = "App.room.speak(txt = document.getElementById('text').value,
+                                        room = document.getElementById('room_id').textContent,
+                                        user = document.getElementById('user_id').textContent)" 
+            value = 'send'
+            class = 'send-button'>
 </div>
